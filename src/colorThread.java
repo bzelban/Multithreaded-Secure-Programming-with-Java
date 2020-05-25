@@ -8,7 +8,7 @@ public class colorThread implements Runnable{
 
     public  colorThread(String color)
     {
-        test.setColorChoise(color);
+        test.setColorChoice(color);
     }
 
 
