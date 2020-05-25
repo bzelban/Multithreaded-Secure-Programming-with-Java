@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
 
-//naber lan yarram
-//ii sn
 
 public class test {
 
