@@ -125,7 +125,7 @@ public class test {
         st(scanner.next());//caseThread(scanner.next());
 
         test.setCaseChoice(scanner.next());
-        Thread caseThread = new Thread(new caseThread(test.getcaseChoise()));
+        Thread caseThread = new Thread(new caseThread(test.getCaseChoice()));
         caseThread.start();
 
         System.out.println("Please state your choice...");
@@ -140,12 +140,13 @@ public class test {
         System.out.println("Please state your choice...");
         System.out.println("\nColor of characters (R or Y):");
 
+        
         colorThread(scanner.next());
         scanner.nextLine();
         String tempColor = scanner.next();
 
         test.setColorChoice(scanner.next());
-        Thread colorThread = new Thread(new colorThread(test.getColorChoise()));
+        Thread colorThread = new Thread(new colorThread(test.getColorChoice()));
         colorThread.start();
         show();
     }
