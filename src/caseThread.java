@@ -8,23 +8,33 @@ public class caseThread implements Runnable {
         test.setCaseChoice(choice);
     }
 
+    private Object lock1 = new Object();
+
+    public void caseThreadMethod(){
+        synchronized (lock1){
+            System.out.println("Case Thread is running");
+            Set<Integer> keys = test.hashMap.keySet();
+            if (test.getCaseChoice().equals("U"))
+            {
+                for (Integer key : keys)
+                {
+                    test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toUpperCase());
+                }
+            }
+            else if (test.getCaseChoice().equals("L"))
+            {
+                for (Integer key : keys)
+                {
+                    test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toLowerCase());
+                }
+            }
+        }
+        }
+
+
+
     @Override
     public void run() {
-        System.out.println("Case Thread is running");
-        Set<Integer> keys = test.hashMap.keySet();
-        if (test.getCaseChoice().equals("U"))
-        {
-            for (Integer key : keys)
-            {
-                test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toUpperCase());
-            }
-        }
-        else if (test.getCaseChoice().equals("L"))
-        {
-            for (Integer key : keys)
-            {
-                test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toLowerCase());
-            }
-        }
-    }
+        caseThreadMethod();
+}
 }

@@ -10,21 +10,27 @@ public class shiftThread implements Runnable{
         test.setShift(shift);
     }
 
+    private Object lock3 = new Object();
+
+
+
+   public void shiftThreadMethod()
+   {
+       synchronized (lock3){
+           System.out.println("Shifting Thread is running");
+           Set<Integer> keys = test.hashMap.keySet();
+           for (Integer key : keys)
+           {
+               ArrayList arrayList = test.hashMap.get(key);
+               int c = arrayList.get(0).toString().charAt(0);
+               arrayList.add(2,(char)(c+test.getShift())) ;
+           }
+       }
+   }
+
     @Override
     public void run() {
 
-        shiftFunction();
+        shiftThreadMethod();
     }
-
-   public synchronized void shiftFunction()
-   {
-       System.out.println("Shifting Thread is running");
-       Set<Integer> keys = test.hashMap.keySet();
-       for (Integer key : keys)
-       {
-           ArrayList arrayList = test.hashMap.get(key);
-           int c = arrayList.get(0).toString().charAt(0);
-           arrayList.add(2,(char)(c+test.getShift())) ;
-       }
-   }
 }
