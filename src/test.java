@@ -27,24 +27,24 @@ public class test {
         return shift;
     }
 
-    private static String caseChoise;
+    private static String caseChoice;
 
-    public void setcaseChoise(String chs){
-        caseChoise = chs;
+    public void setCaseChoice(String chs){
+        caseChoice = chs;
     }
 
-    public static String getcaseChoise(){
-        return caseChoise;
+    public static String getCaseChoice(){
+        return caseChoice;
     }
 
-    private static String colorChoise;
+    private static String colorChoice;
 
-    public void setColorChoise(String color){
-        colorChoise = color;
+    public void setColorChoice(String color){
+        colorChoice = color;
     }
 
-    public static String getColorChoise(){
-        return colorChoise;
+    public static String getColorChoice(){
+        return colorChoice;
     }
 
     static String read(File path) throws IOException {
@@ -75,29 +75,29 @@ public class test {
         System.out.println("\nAfter Shift");
         for (Integer key : keys) {
             ArrayList arrayList = hashMap.get(key);
-            if(getcaseChoise().equalsIgnoreCase("U"))
+            if(getCaseChoice().equalsIgnoreCase("U"))
                 System.out.print(arrayList.get(2).toString().toUpperCase());
 
-            if(getcaseChoise().equalsIgnoreCase("L"))
+            if(getCaseChoice().equalsIgnoreCase("L"))
                 System.out.print(arrayList.get(2).toString().toLowerCase());
         }
         System.out.println("\nAfter Color Change");
         for (Integer key : keys) {
             ArrayList arrayList = hashMap.get(key);
 
-            if (getcaseChoise().equalsIgnoreCase("U")) {
-                if (getColorChoise().equalsIgnoreCase("R"))
+            if (getCaseChoice().equalsIgnoreCase("U")) {
+                if (getColorChoice().equalsIgnoreCase("R"))
                     System.out.print(ANSI_RED + arrayList.get(3).toString().toUpperCase());
 
-                if (getColorChoise().equalsIgnoreCase("Y"))
+                if (getColorChoice().equalsIgnoreCase("Y"))
                     System.out.print(ANSI_YELLOW + arrayList.get(3).toString().toUpperCase());
             }
 
-            if(getcaseChoise().equalsIgnoreCase("L")){
-                if (getColorChoise().equalsIgnoreCase("R"))
+            if(getCaseChoice().equalsIgnoreCase("L")){
+                if (getColorChoice().equalsIgnoreCase("R"))
                     System.out.print(ANSI_RED + arrayList.get(3).toString().toLowerCase());
 
-                if (getColorChoise().equalsIgnoreCase("Y"))
+                if (getColorChoice().equalsIgnoreCase("Y"))
                     System.out.print(ANSI_YELLOW + arrayList.get(3).toString().toLowerCase());
             }
         }
@@ -126,7 +126,7 @@ public class test {
 
         //st(scanner.next());//caseThread(scanner.next());
 
-        test.setcaseChoise(scanner.next());
+        test.setCaseChoice(scanner.next());
         //Thread caseThread = new Thread(new caseThread(test.getcaseChoise()));
         //caseThread.start();
 
@@ -146,7 +146,7 @@ public class test {
         scanner.nextLine();
         String tempColor = scanner.next();
 
-        test.setColorChoise(scanner.next());
+        test.setColorChoice(scanner.next());
         //Thread colorThread = new Thread(new colorThread(test.getColorChoise()));
         //colorThread.start();
         show();
