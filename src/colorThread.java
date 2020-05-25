@@ -11,19 +11,26 @@ public class colorThread implements Runnable{
         test.setColorChoice(color);
     }
 
+    private Object lock2 = new Object();
+
+    public void colorThreadMethod(){
+        synchronized (lock2){
+            System.out.println("Color Thread is running");
+            Set<Integer> keys = test.hashMap.keySet();
+            for (Integer key : keys)
+            {
+                ArrayList arrayList = test.hashMap.get(key);
+                String colorTemplate="";
+
+                colorTemplate = new String(arrayList.get(0).toString());
+
+                arrayList.add(3, colorTemplate);
+            }
+        }
+    }
 
     @Override
     public void run() {
-        System.out.println("Color Thread is running");
-        Set<Integer> keys = test.hashMap.keySet();
-        for (Integer key : keys)
-        {
-            ArrayList arrayList = test.hashMap.get(key);
-            String colorTemplate="";
-
-            colorTemplate = new String(arrayList.get(0).toString());
-
-            arrayList.add(3, colorTemplate);
-        }
+        colorThreadMethod();
     }
 }
