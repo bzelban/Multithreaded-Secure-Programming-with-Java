@@ -117,6 +117,8 @@ public class test {
             hashMap.put(i,arrayList);
         }
 
+
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please state your choice...");
@@ -140,7 +142,7 @@ public class test {
         System.out.println("Please state your choice...");
         System.out.println("\nColor of characters (R or Y):");
 
-        
+
         colorThread(scanner.next());
         scanner.nextLine();
         String tempColor = scanner.next();
