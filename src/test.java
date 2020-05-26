@@ -97,30 +97,43 @@ public class test {
         System.out.println("\nAfter Shift");
         for (Integer key : keys) {
             ArrayList arrayList = hashMap.get(key);
-            if(getCaseChoice().equalsIgnoreCase("U"))
+            if(getCaseChoice().equals("U") || getCaseChoice().equals("u"))
                 System.out.print(arrayList.get(2).toString().toUpperCase());
 
-            if(getCaseChoice().equalsIgnoreCase("L"))
+            else if(getCaseChoice().equals("L") || getCaseChoice().equals("l"))
                 System.out.print(arrayList.get(2).toString().toLowerCase());
+
+            else
+                System.out.println("Invalid entry...");
         }
         System.out.println("\nAfter Color Change");
         for (Integer key : keys) {
             ArrayList arrayList = hashMap.get(key);
 
-            if (getCaseChoice().equalsIgnoreCase("U")) {
-                if (getColorChoice().equalsIgnoreCase("R"))
+            if (getCaseChoice().equals("U") || getCaseChoice().equals("u")) {
+                if (getColorChoice().equals("R") || getColorChoice().equals("r"))
                     System.out.print(ANSI_RED + arrayList.get(3).toString().toUpperCase());
 
-                if (getColorChoice().equalsIgnoreCase("Y"))
+                else if (getColorChoice().equals("Y") || getColorChoice().equals("y"))
                     System.out.print(ANSI_YELLOW + arrayList.get(3).toString().toUpperCase());
+
+                else
+                    System.out.println("Invalid entry...");
             }
 
-            if(getCaseChoice().equalsIgnoreCase("L")){
-                if (getColorChoice().equalsIgnoreCase("R"))
+            else if(getCaseChoice().equals("L") || getCaseChoice().equals("l")){
+                if (getColorChoice().equals("R") || getColorChoice().equals("r"))
                     System.out.print(ANSI_RED + arrayList.get(3).toString().toLowerCase());
 
-                if (getColorChoice().equalsIgnoreCase("Y"))
+                else if (getColorChoice().equals("Y") || getColorChoice().equals("y"))
                     System.out.print(ANSI_YELLOW + arrayList.get(3).toString().toLowerCase());
+
+                else
+                    System.out.println("Invalid entry...");
+            }
+
+            else{
+                System.out.println("Invalid entry...");
             }
         }
     }

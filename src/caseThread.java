@@ -14,19 +14,22 @@ public class caseThread implements Runnable {
         synchronized (lock1){
             System.out.println("Case Thread is running");
             Set<Integer> keys = test.hashMap.keySet();
-            if (test.getCaseChoice().equalsIgnoreCase("U"))
+            if (test.getCaseChoice().equals("U") || test.getCaseChoice().equals("u"))
             {
                 for (Integer key : keys)
                 {
                     test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toUpperCase());
                 }
             }
-            else if (test.getCaseChoice().equalsIgnoreCase("L"))
+            else if (test.getCaseChoice().equals("L") || test.getCaseChoice().equals("l") )
             {
                 for (Integer key : keys)
                 {
                     test.hashMap.get(key).add(1, test.hashMap.get(key).get(0).toString().toLowerCase());
                 }
+            }
+            else{
+                System.out.println("Invalid entry...");
             }
         }
     }
