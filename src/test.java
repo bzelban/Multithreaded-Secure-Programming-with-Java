@@ -124,7 +124,7 @@ public class test {
         System.out.println("Please state your choice...");
         System.out.println("UPPER case or lower case (U or L)");
 
-        st(scanner.next());//caseThread(scanner.next());
+        //st(scanner.next());//caseThread(scanner.next());
 
         test.setCaseChoice(scanner.next());
         Thread caseThread = new Thread(new caseThread(test.getCaseChoice()));
@@ -143,7 +143,7 @@ public class test {
         System.out.println("\nColor of characters (R or Y):");
 
 
-        colorThread(scanner.next());
+        //colorThread(scanner.next());
         scanner.nextLine();
         String tempColor = scanner.next();
 
