@@ -152,7 +152,7 @@ public class test {
         
         File file = new File("b.txt");
 
-        Files.copy(inputStream, Paths.get("b.txt"), StandardCopyOption.REPLACE_EXISTING);
+
         
 
 
