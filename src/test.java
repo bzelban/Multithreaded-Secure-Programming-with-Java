@@ -57,7 +57,31 @@ public class test {
         }
         return content;
     }
+    /*
+    static void showV2()
+    {
+        Set<Integer> keys = hashMap.keySet();
+        ArrayList arrayList = hashMap.get(key);
+        System.out.println("Original");
+        for (Integer key : keys) {
+            ArrayList arrayList = hashMap.get(key);
+            System.out.print(arrayList.get(0).toString());
+        }
+        System.out.println("\nAfter Case Change");
+        for (Integer key : keys) {
+            ArrayList arrayList = hashMap.get(key);
+            System.out.print(arrayList.get(1).toString());
+        }
 
+        System.out.println("\nAfter Color Change");
+        for (Integer key: keys)
+        {
+            ArrayList arraylist = hashMap.get(key);
+            System.out.println(arraylist.get(2).toString());
+        }
+
+    }
+    */
     static void show(){
         Set<Integer> keys = hashMap.keySet();
         System.out.println("Original");
@@ -151,6 +175,7 @@ public class test {
         Thread colorThread = new Thread(new colorThread(test.getColorChoice()));
         colorThread.start();
         show();
+        //showV2();
     }
 
 }
