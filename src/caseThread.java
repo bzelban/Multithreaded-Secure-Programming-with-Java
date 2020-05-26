@@ -11,7 +11,7 @@ public class caseThread implements Runnable {
     private Object lock1 = new Object();
 
     public void caseThreadMethod(){
-        synchronized (lock1){
+        synchronized (this){
             System.out.println("Case Thread is running");
             Set<Integer> keys = test.hashMap.keySet();
             if (test.getCaseChoice().equals("U") || test.getCaseChoice().equals("u"))

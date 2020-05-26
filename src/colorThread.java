@@ -14,7 +14,7 @@ public class colorThread implements Runnable{
     private Object lock2 = new Object();
 
     public void colorThreadMethod(){
-        synchronized (lock2){
+        synchronized (this){
             System.out.println("Color Thread is running");
             Set<Integer> keys = test.hashMap.keySet();
             for (Integer key : keys)

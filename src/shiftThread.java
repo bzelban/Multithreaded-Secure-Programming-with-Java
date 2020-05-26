@@ -16,7 +16,7 @@ public class shiftThread implements Runnable{
 
    public void shiftThreadMethod()
    {
-       synchronized (lock3){
+       synchronized (this){
            System.out.println("Shifting Thread is running");
            Set<Integer> keys = test.hashMap.keySet();
            for (Integer key : keys)
