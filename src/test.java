@@ -152,9 +152,9 @@ public class test {
         
         File file = new File("b.txt");
 
-        Files.copy(inputStream, Paths.get("src/b.txt"), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(inputStream, Paths.get("b.txt"), StandardCopyOption.REPLACE_EXISTING);
         
-       
+
 
         //File file = new File("http://homes.ieu.edu.tr/eokur/sample3.txt");
         String content = read(file);
