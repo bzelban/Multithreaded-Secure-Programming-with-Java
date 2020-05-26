@@ -129,7 +129,7 @@ public class test {
     public static void main(String[] args) throws IOException {
         test test = new test();
 
-        File file = new File("D:\\_IEU\\SE375\\System375\\System375\\a.txt");
+        File file = new File("src/a.txt");
 
         String content = read(file);
         hashMap = new HashMap<>();
