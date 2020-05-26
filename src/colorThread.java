@@ -11,7 +11,7 @@ public class colorThread implements Runnable{
         test.setColorChoice(color);
     }
 
-    private Object lock2 = new Object();
+    //private Object lock2 = new Object();
 
     public void colorThreadMethod(){
         synchronized (this){

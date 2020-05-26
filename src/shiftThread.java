@@ -10,7 +10,7 @@ public class shiftThread implements Runnable{
         test.setShift(shift);
     }
 
-    private Object lock3 = new Object();
+    //private Object lock3 = new Object();
 
 
 

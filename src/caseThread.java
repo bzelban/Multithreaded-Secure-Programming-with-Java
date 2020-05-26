@@ -8,7 +8,7 @@ public class caseThread implements Runnable {
         test.setCaseChoice(choice);
     }
 
-    private Object lock1 = new Object();
+    //private Object lock1 = new Object();
 
     public void caseThreadMethod(){
         synchronized (this){

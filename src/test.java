@@ -1,4 +1,8 @@
 import java.io.*;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -141,9 +145,12 @@ public class test {
 
     public static void main(String[] args) throws IOException {
         test test = new test();
+        InputStream inputStream = new URL("http://homes.ieu.edu.tr/eokur/sample0.txt").openStream();
+        Files.copy(inputStream, Paths.get("src/a.txt"), StandardCopyOption.REPLACE_EXISTING);
+
 
         File file = new File("src/a.txt");
-
+        //File file = new File("http://homes.ieu.edu.tr/eokur/sample3.txt");
         String content = read(file);
         hashMap = new HashMap<>();
 
