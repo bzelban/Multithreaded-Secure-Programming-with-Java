@@ -181,8 +181,8 @@ public class test {
 
 
         //colorThread(scanner.next());
-        scanner.nextLine();
-        String tempColor = scanner.next();
+        //scanner.nextLine();
+        //String tempColor = scanner.next();
 
         test.setColorChoice(scanner.next());
         Thread colorThread = new Thread(new colorThread(test.getColorChoice()));
