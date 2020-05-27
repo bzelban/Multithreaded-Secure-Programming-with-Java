@@ -153,9 +153,6 @@ public class test {
         File file = new File("b.txt");
 
 
-        
-
-
         //File file = new File("http://homes.ieu.edu.tr/eokur/sample3.txt");
         String content = read(file);
         hashMap = new HashMap<>();
