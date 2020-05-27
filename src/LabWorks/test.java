@@ -1,3 +1,5 @@
+package LabWorks;
+
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
@@ -171,7 +173,7 @@ public class test {
         System.out.println("Please state your choice...");
         System.out.println("UPPER case or lower case (U or L)");
 
-        //st(scanner.next());//caseThread(scanner.next());
+        //st(scanner.next());//LabWorks.caseThread(scanner.next());
 
         test.setCaseChoice(scanner.next());
         Thread caseThread = new Thread(new caseThread(test.getCaseChoice()));
@@ -180,7 +182,7 @@ public class test {
         System.out.println("Please state your choice...");
         System.out.println("\nHow many characters to shift (number between 1-3):");
 
-        //shiftThread(scanner.nextInt());
+        //LabWorks.shiftThread(scanner.nextInt());
 
         test.setShift(scanner.nextInt());
         Thread shiftThread = new Thread(new shiftThread(test.getShift()));
@@ -190,7 +192,7 @@ public class test {
         System.out.println("\nColor of characters (R or Y):");
 
 
-        //colorThread(scanner.next());
+        //LabWorks.colorThread(scanner.next());
         //scanner.nextLine();
         //String tempColor = scanner.next();
 

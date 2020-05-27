@@ -1,3 +1,5 @@
+package LabWorks;
+
 import java.io.*;
 import java.net.*;
 import java.nio.file.Files;
@@ -67,7 +69,7 @@ class TCPClient {
 
             //System.out.println("FROM SERVER: " + modifiedSentence);
 
-            //From server bla
+            //From LabWorks.server bla
             String serverSentence = inFromServer.readLine();
             //outToClient.writeBytes(serverSentence);
             //clientSocket.close();

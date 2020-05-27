@@ -1,4 +1,4 @@
-package SE375LAB;
+package SE375GRADEDLAB;
 
 import java.io.*;
 import java.net.*;
@@ -20,7 +20,7 @@ class TCPClient {
 
         modifiedSentence = inFromServer.readLine();
 
-        System.out.println("FROM SERVER: " + modifiedSentence);
+        System.out.println("Message FROM SERVER: " + modifiedSentence);
 
         clientSocket.close();
     }

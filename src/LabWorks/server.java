@@ -1,10 +1,15 @@
-package SE375LAB;
+package LabWorks;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-class TCPServer {
-    public static void main(String [] args) throws Exception {
+public class server {
+
+
+    public static void main(String argv[]) throws Exception {
         String clientSentence;
         String capitalizedSentence;
 
@@ -15,9 +20,9 @@ class TCPServer {
             DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 
             clientSentence = inFromClient.readLine();
-            System.out.println("Client'ten gelen: " + clientSentence);
             capitalizedSentence = clientSentence.toUpperCase() + '\n';
             outToClient.writeBytes(capitalizedSentence); // outToClient.writeBytes(capitalizedSentence);������
         }
     }
+
 }

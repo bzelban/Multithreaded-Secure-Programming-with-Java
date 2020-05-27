@@ -1,8 +1,11 @@
+package LabWorks;
+
+import LabWorks.test;
+
 import java.util.Set;
-import java.util.Scanner;
 
 public class caseThread implements Runnable {
-    static test test = new test();
+    static LabWorks.test test = new test();
 
     public caseThread(String choice){
         test.setCaseChoice(choice);

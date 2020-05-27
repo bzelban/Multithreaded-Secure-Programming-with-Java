@@ -1,9 +1,12 @@
+package LabWorks;
+
+import LabWorks.test;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Set;
 
 public class colorThread implements Runnable{
-    static test test = new test();
+    static LabWorks.test test = new test();
 
 
     public  colorThread(String color)

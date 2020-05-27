@@ -1,9 +1,13 @@
+package LabWorks;
+
+import LabWorks.test;
+
 import java.util.ArrayList;
 import java.util.Set;
 
 public class shiftThread implements Runnable{
 
-    static test test = new test();
+    static LabWorks.test test = new test();
 
     public shiftThread(int shift)
     {

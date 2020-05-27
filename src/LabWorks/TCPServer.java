@@ -1,3 +1,5 @@
+package LabWorks;
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ class TCPServer {
             //capitalizedSentence = clientSentence.toUpperCase() + '\n';
             //outToClient.writeBytes(capitalizedSentence); // outToClient.writeBytes(capitalizedSentence);������
 
-            //System.out.println("From Client: " + clientSentence);
+            //System.out.println("From LabWorks.Client: " + clientSentence);
 
 
             /*
