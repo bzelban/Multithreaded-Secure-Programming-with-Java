@@ -18,6 +18,7 @@ class TCPServer {
             clientSentence = inFromClient.readLine();
             capitalizedSentence = clientSentence.toUpperCase() + '\n';
             outToClient.writeBytes(capitalizedSentence); // outToClient.writeBytes(capitalizedSentence);������
+            System.out.println("Message to server: "+capitalizedSentence);
         }
     }
 }

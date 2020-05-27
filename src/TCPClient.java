@@ -15,6 +15,7 @@ class TCPClient {
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+        while(true){
         sentence = inFromUser.readLine();
         outToServer.writeBytes(sentence + '\n');
 
@@ -23,7 +24,9 @@ class TCPClient {
         //System.out.println("FROM SERVER: " + modifiedSentence);
         System.out.println("Message to client: " + sentence);
 
-        clientSocket.close();
+
+        }
+
     }
 }
 
