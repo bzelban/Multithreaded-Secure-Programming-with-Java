@@ -4,6 +4,11 @@ import java.net.*;
 import java.io.*;
 
 public class MultiThreadedServer {
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+
     private static boolean closed = false;
     String tempCase;
     String tempShift;
@@ -20,7 +25,6 @@ public class MultiThreadedServer {
     public String shiftMethod(String _shift)
     {
         int c = 3;
-        String tempRes;
         StringBuffer result= new StringBuffer();
 
         for (int i=0; i<_shift.length(); i++)
@@ -38,12 +42,15 @@ public class MultiThreadedServer {
                 result.append(ch);
             }
         }
-        tempRes = result.toString();
-        return tempRes;
+        tempShift = result.toString();
+        return tempShift;
     }
 
     // To Only Coloring Red
-    public String
+    public String colorMethod(String _color)
+    {
+        return ANSI_RED+_color;
+    }
 
     public static void main(String[] args) throws Exception {
         ServerSocket ss = null;
@@ -83,6 +90,12 @@ public class MultiThreadedServer {
 
                 while (! clientStop) {
                     String clientCommand = din.readLine();
+                    //
+                    clientCommand = caseMethod(clientCommand);
+                    clientCommand = shiftMethod(clientCommand);
+                    clientCommand = colorMethod(clientCommand);
+
+                    //
                     System.out.println("Client Says :" + clientCommand);
 
                     if (clientCommand.equalsIgnoreCase("quit")) {

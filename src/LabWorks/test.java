@@ -157,7 +157,7 @@ public class test {
 
         StringBuffer testString = new StringBuffer();
 
-        testString = "ali";
+        //testString = "ali";
 
 
         //File file = new File("http://homes.ieu.edu.tr/eokur/sample3.txt");
