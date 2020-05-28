@@ -5,7 +5,9 @@ import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.*;
 import java.util.Scanner;
+
 
 class TCPClient {
 
@@ -23,7 +25,10 @@ class TCPClient {
     }
 
     
-    public static void main(String [] args) throws Exception {
+    public static void main(String [] args) throws Exception, NullPointerException {
+
+        AsymmetricCryptography aC = new AsymmetricCryptography();
+
         String sentence;
         String modifiedSentence;
 
@@ -45,15 +50,20 @@ class TCPClient {
 
 
         //sentence = inFromUser.readLine();
+        content = aC.EncryptFromClient(content);
         outToServer.writeBytes(content + '\n');
+
+
+
+        //outToServer.writeBytes();
+        //outToServer.writeBytes();
 
         //From Server
         modifiedSentence = inFromServer.readLine();
 
+        modifiedSentence = aC.DecryptFromServer(modifiedSentence);
+
         System.out.println("Message FROM SERVER: " + modifiedSentence);
         //clientSocket.close();
-
-
-
     }
 }

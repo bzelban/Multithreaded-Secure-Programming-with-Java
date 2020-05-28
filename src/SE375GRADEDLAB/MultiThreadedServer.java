@@ -52,8 +52,12 @@ public class MultiThreadedServer {
         return ANSI_RED+_color;
     }
 
-    public static void main(String[] args) throws Exception {
+    static AsymmetricCryptography aC = new AsymmetricCryptography();
+
+    public static void main(String[] args) throws Exception, NullPointerException {
         ServerSocket ss = null;
+
+
         try {
             ss = new ServerSocket(3334);
         } catch (IOException ioe) {
@@ -82,8 +86,6 @@ public class MultiThreadedServer {
             PrintWriter dout = null;
             System.out.println("Accepted Client Address - " + s.getInetAddress().getHostName());
 
-
-
             try {
                 din = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 dout = new PrintWriter(s.getOutputStream(), true);
@@ -91,6 +93,7 @@ public class MultiThreadedServer {
                 while (! clientStop) {
                     String clientCommand = din.readLine();
                     //
+                    clientCommand = aC.DecryptFromClient(clientCommand);
                     clientCommand = caseMethod(clientCommand);
                     clientCommand = shiftMethod(clientCommand);
                     clientCommand = colorMethod(clientCommand);
@@ -106,6 +109,7 @@ public class MultiThreadedServer {
                         System.out.print("Stopping client thread for client : ");
                         closed = true;
                     } else {
+                        clientCommand = aC.DecryptFromServer(clientCommand);
                         dout.println("Server Says : " + clientCommand);
                         dout.flush();
                     }
